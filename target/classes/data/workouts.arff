@@ -37,3 +37,34 @@
 60,18.0,600,Cycling
 30,2.0,100,Walking
 55,0,350,'Gym Workout'
+% --- Adding 30 more rows to meet 50-row minimum ---
+30,5.0,300,Running
+45,14.0,430,Cycling
+60,3.5,190,Walking
+50,0,360,'Gym Workout'
+25,3.0,210,Running
+70,22.0,700,Cycling
+40,2.8,140,Walking
+30,0,230,'Gym Workout'
+35,5.5,350,Running
+50,17.0,520,Cycling
+90,5.0,280,Walking
+60,0,410,'Gym Workout'
+20,3.0,200,Running
+80,28.0,800,Cycling
+20,1.8,90,Walking
+45,0,300,'Gym Workout'
+28,4.5,280,Running
+60,20.0,620,Cycling
+30,2.5,120,Walking
+55,0,330,'Gym Workout'
+40,6.5,400,Running
+45,13.0,410,Cycling
+70,4.5,240,Walking
+50,0,370,'Gym Workout'
+30,4.8,290,Running
+75,23.0,730,Cycling
+45,3.0,160,Walking
+35,0,260,'Gym Workout'
+25,4.2,270,Running
+55,17.5,540,Cycling
