@@ -78,5 +78,56 @@ public class WorkoutDAO {
         }
     }
 
+
+
+public Workout getWorkoutById(int workoutId) {
+    String sql = "SELECT * FROM Workouts WHERE workout_id = ?";
+
+    try (Connection conn = DatabaseManager.getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, workoutId);
+
+        try (ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                Workout workout = new Workout();
+                workout.setWorkoutId(rs.getInt("workout_id"));
+                workout.setUserId(rs.getInt("user_id"));
+                workout.setActivityType(rs.getString("activity_type"));
+                workout.setDurationMins(rs.getInt("duration_mins"));
+                workout.setDistanceKm(rs.getDouble("distance_km"));
+                workout.setCaloriesBurned(rs.getInt("calories_burned"));
+                workout.setWorkoutDate(rs.getString("workout_date"));
+                workout.setNotes(rs.getString("notes"));
+                return workout;
+            }
+        }
+    } catch (SQLException e) {
+        System.err.println("Error getting workout by ID: " + e.getMessage());
+    }
+    return null; // Not found
+}
+
+public boolean updateWorkout(Workout workout) {
+    String sql = "UPDATE Workouts SET activity_type = ?, duration_mins = ?, distance_km = ?, calories_burned = ?, workout_date = ?, notes = ? WHERE workout_id = ?";
+
+    try (Connection conn = DatabaseManager.getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setString(1, workout.getActivityType());
+        pstmt.setInt(2, workout.getDurationMins());
+        pstmt.setDouble(3, workout.getDistanceKm());
+        pstmt.setInt(4, workout.getCaloriesBurned());
+        pstmt.setString(5, workout.getNotes());
+        pstmt.setString(6, workout.getWorkoutDate());
+        pstmt.setInt(7, workout.getWorkoutId());
+
+        return pstmt.executeUpdate() > 0;
+    } catch (SQLException e) {
+        System.err.println("Error updating workout: " + e.getMessage());
+        return false;
+    }
+}
+
   
 }
