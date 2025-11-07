@@ -55,6 +55,18 @@
     </div>
 
     <div class="form-section">
+
+
+<c:if test="${not empty sessionScope.aiSuggestion}">
+        <div style="background-color: #e6f7ff; border: 1px solid #b3d7ff; padding: 10px; border-radius: 5px; margin-bottom: 15px; color: #0056b3;">
+            <strong>${sessionScope.aiSuggestion}</strong>
+        </div>
+        <%-- Remove the attribute so it doesn't show again on refresh --%>
+        <c:remove var="aiSuggestion" scope="session" />
+    </c:if>
+
+
+
         <h2>Add New Workout</h2>
         <form action="workouts" method="POST">
             <label>Activity Type:</label>
