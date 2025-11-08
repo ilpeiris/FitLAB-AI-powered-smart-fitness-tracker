@@ -214,9 +214,8 @@ private Instances dataHeader;
         workoutDAO.addWorkout(newWorkout);
 
         
-        
-        session.setAttribute("aiSuggestion", "AI Suggestion for your entry: " + aiPrediction);
-
+        session.setAttribute("aiPrediction", aiPrediction);   
+        session.setAttribute("userSelection", activityType); 
        
         response.sendRedirect("workouts");
     }

@@ -28,14 +28,40 @@
 <div class="container">
         <h1 style="color:white">Manage Workouts</h1>
 
-        <c:if test="${not empty sessionScope.aiSuggestion}">
-            <div class="ai-suggestion">
-                <strong>${sessionScope.aiSuggestion}</strong>
-            </div>
-            <%-- Remove the attribute so it doesn't show again on refresh --%>
-            <c:remove var="aiSuggestion" scope="session" />
-        </c:if>
+       <c:if test="${not empty sessionScope.aiPrediction}">
+    <div class="analysis-box">
+        <h3> Workout Saved!</h3>
 
+        <div class="analysis-grid">
+            <div class="analysis-item">
+                <span class="analysis-item-title">Your Input:</span>
+                <span class="analysis-item-data user">${sessionScope.userSelection}</span>
+            </div>
+
+            <div class="analysis-item">
+                <span class="analysis-item-title">AI Suggestion:</span>
+                <span class="analysis-item-data ai">${sessionScope.aiPrediction}</span>
+            </div>
+        </div>
+
+        <c:choose>
+            <c:when test="${sessionScope.aiPrediction == sessionScope.userSelection}">
+                <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #2ada53;">
+                    AI result matches your activity type.
+                </p>
+            </c:when>
+            <c:otherwise>
+                <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #e2ae11;">
+                    AI result differs from your activity.
+                </p>
+            </c:otherwise>
+        </c:choose>
+    </div>
+
+
+    <c:remove var="aiPrediction" scope="session" />
+    <c:remove var="userSelection" scope="session" />
+</c:if>
 
 
 
