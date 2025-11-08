@@ -22,7 +22,10 @@
         <a href="logout">Logout</a>
     </nav>
 
-    <div class="container">
+    
+
+
+<div class="container">
         <h1>Manage Workouts</h1>
 
         <c:if test="${not empty sessionScope.aiSuggestion}">
@@ -33,8 +36,12 @@
             <c:remove var="aiSuggestion" scope="session" />
         </c:if>
 
-        <div class="form-container">
-            <h2>Add New Workout</h2>
+
+
+
+
+
+<div class="form-container" style="margin-top: 2rem;max-width: 1000px;"> <h2>Add New Workout</h2>
             <form action="workouts" method="POST">
                 <label>Activity Type:</label>
                 <select name="activityType" required>
@@ -62,6 +69,8 @@
                 <button type="submit" class="btn">Add Workout</button>
             </form>
         </div>
+
+
 
         <div class="content-box">
             <h2>Your Workout History</h2>
@@ -117,7 +126,11 @@
                 </tbody>
             </table>
         </div>
-    </div>
+        
+        </div>
+
+
+
 
 </body>
 </html>
