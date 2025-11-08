@@ -26,7 +26,7 @@
 
 
 <div class="container">
-        <h1>Manage Workouts</h1>
+        <h1 style="color:white">Manage Workouts</h1>
 
         <c:if test="${not empty sessionScope.aiSuggestion}">
             <div class="ai-suggestion">

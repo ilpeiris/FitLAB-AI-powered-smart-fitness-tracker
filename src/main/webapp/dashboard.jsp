@@ -24,8 +24,8 @@
     </nav>
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
-        <h2>Your Activity Summary</h2>
+        <h1 style="color:white">Welcome, ${sessionScope.user.username}!</h1>
+        <h2 style="color:white">Your Activity Summary</h2>
 
         <div class="stats">
             <div class="stat-box">
