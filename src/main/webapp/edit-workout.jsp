@@ -15,16 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Workout</title>
-    <style>
-        nav { background-color: #f0f0f0; padding: 10px; }
-        nav a { margin-right: 15px; }
-        body { font-family: sans-serif; }
-        .form-section { background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px; }
-        .form-section h2 { margin-top: 0; }
-    </style>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -35,9 +26,8 @@
         <a href="logout">Logout</a>
     </nav>
 
-    <h1>Edit Workout</h1>
-
-    <div class="form-section">
+    <div class="form-container">
+        <h2>Edit Workout</h2>
         <form action="edit-workout" method="POST">
 
             <input type="hidden" name="workoutId" value="${workout.workoutId}">
@@ -65,8 +55,8 @@
             <label>Notes:</label>
             <input type="text" name="notes" value="${workout.notes}">
 
-            <button type="submit">Save Changes</button>
-            <a href="workouts">Cancel</a>
+            <button type="submit" class="btn">Save Changes</button>
+            <a href="workouts" class="btn-secondary" style="width: 100%; box-sizing: border-box;">Cancel</a>
         </form>
     </div>
 
