@@ -118,8 +118,8 @@ public boolean updateWorkout(Workout workout) {
         pstmt.setInt(2, workout.getDurationMins());
         pstmt.setDouble(3, workout.getDistanceKm());
         pstmt.setInt(4, workout.getCaloriesBurned());
-        pstmt.setString(5, workout.getNotes());
-        pstmt.setString(6, workout.getWorkoutDate());
+        pstmt.setString(5, workout.getWorkoutDate());
+        pstmt.setString(6, workout.getNotes());
         pstmt.setInt(7, workout.getWorkoutId());
 
         return pstmt.executeUpdate() > 0;
