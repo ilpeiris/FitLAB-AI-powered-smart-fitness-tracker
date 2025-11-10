@@ -185,9 +185,10 @@
                 // Build the URL for new API
                 // We use document.location.pathname.replace('workouts', '') to get the base path
                 // This makes it work on localhost:8080/fitlife/ or any other path
-                const basePath = document.location.pathname.substring(0, document.location.pathname.lastIndexOf('/'));
-                const url = `${basePath}/api/predict?duration=${duration}&distance=${distance}&calories=${calories}`;
                 
+
+                const url = `api/predict?duration=${duration}&distance=${distance}&calories=${calories}`;
+                 
                 const response = await fetch(url);
                 const data = await response.json();
 
