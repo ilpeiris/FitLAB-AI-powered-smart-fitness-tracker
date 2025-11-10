@@ -29,6 +29,15 @@ public class AppLifecycleListener implements ServletContextListener {
         System.out.println("-------------------------------------------------");
         System.out.println("DATABASE PATH SET TO: " + dbPath);
         System.out.println("-------------------------------------------------");
+   
+   // ---  NEW CODE for realtime ai ---
+        try {
+            com.fitlife.MLModelManager.loadModel(context); // Load the AI model
+        } catch (javax.servlet.ServletException e) {
+            e.printStackTrace();
+        }
+        // -------------------------
+   
     }
 
     @Override
