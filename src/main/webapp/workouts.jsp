@@ -161,58 +161,58 @@
         </div>
 
 
-
-
 <script>
-    // Get references to the input fields
-    const durationInput = document.getElementById('duration');
-    const distanceInput = document.getElementById('distance');
-    const caloriesInput = document.getElementById('calories');
-    const suggestionSpan = document.getElementById('ai-suggestion');
+    // new, important part:
+    // This function will ONLY run after the entire HTML page is loaded and ready.
+    document.addEventListener("DOMContentLoaded", function() {
 
-    // This functio run  API call
-    async function fetchPrediction() {
-        // Get current values
-        const duration = durationInput.value;
-        const distance = distanceInput.value;
-        const calories = caloriesInput.value;
+        // Get references to the input fields
+        const durationInput = document.getElementById('duration');
+        const distanceInput = document.getElementById('distance');
+        const caloriesInput = document.getElementById('calories');
+        const suggestionSpan = document.getElementById('ai-suggestion');
 
-        // Only fetch if all three fields have a value
-        if (duration && duration > 0 && distance && distance >= 0 && calories && calories > 0) {
-            suggestionSpan.innerText = "AI is thinking...";
-            
-            try {
-                // Build the URL for new API
-                // We use document.location.pathname.replace('workouts', '') to get the base path
-                // This makes it work on localhost:8080/fitlife/ or any other path
+        // This function wil run API call
+        async function fetchPrediction() {
+            // Get current values
+            const duration = durationInput.value;
+            const distance = distanceInput.value;
+            const calories = caloriesInput.value;
+
+            // Only fetch if all three fields have a value
+            if (duration && duration > 0 && distance && distance >= 0 && calories && calories > 0) {
+                suggestionSpan.innerText = "AI is thinking...";
                 
+                try {
+                    // Build the URL for  new API
+                    const url = `api/predict?duration=${duration}&distance=${distance}&calories=${calories}`;
+                    
+                    const response = await fetch(url);
+                    const data = await response.json();
 
-                const url = `api/predict?duration=${duration}&distance=${distance}&calories=${calories}`;
-                 
-                const response = await fetch(url);
-                const data = await response.json();
-
-                if (response.ok && data.prediction) {
-                    suggestionSpan.style.color = "#007bff"; // Blue
-                    suggestionSpan.innerText = "AI Suggestion: " + data.prediction;
-                } else {
+                    if (response.ok && data.prediction) {
+                        suggestionSpan.style.color = "#007bff"; // Blue
+                        suggestionSpan.innerText = "AI Suggestion: " + data.prediction;
+                    } else {
+                        suggestionSpan.style.color = "#dc3545"; // Red
+                        suggestionSpan.innerText = "Could not predict.";
+                    }
+                } catch (error) {
+                    console.error('Error fetching prediction:', error);
                     suggestionSpan.style.color = "#dc3545"; // Red
-                    suggestionSpan.innerText = "Could not predict.";
+                    suggestionSpan.innerText = "Error contacting AI.";
                 }
-            } catch (error) {
-                console.error('Error fetching prediction:', error);
-                suggestionSpan.style.color = "#dc3545"; // Red
-                suggestionSpan.innerText = "Error contacting AI.";
+            } else {
+                suggestionSpan.innerText = ""; // Clear suggestion if fields are empty
             }
-        } else {
-            suggestionSpan.innerText = ""; // Clear suggestion if fields are empty
         }
-    }
 
-    // Add event listeners to run the function whenever the user stops typing
-    durationInput.addEventListener('input', fetchPrediction);
-    distanceInput.addEventListener('input', fetchPrediction);
-    caloriesInput.addEventListener('input', fetchPrediction);
+        // Add event listeners to run the function whenever the user stops typing
+        durationInput.addEventListener('input', fetchPrediction);
+        distanceInput.addEventListener('input', fetchPrediction);
+        caloriesInput.addEventListener('input', fetchPrediction);
+
+    }); 
 </script>
 
 </body>
