@@ -23,6 +23,16 @@
     </nav>
 
     <div class="form-container">
+        
+        <div class="profile-details">
+            <h2 style="text-align: center; margin-bottom: 1.5rem;">Your Profile</h2>
+            <div class="detail-item">
+                <span class="detail-label">Username:</span>
+                <span class="detail-value">${sessionScope.user.username}</span>
+            </div>
+            </div>
+        
+        <hr class="form-divider">
         <h2>Change Password</h2>
 
         <c:if test="${not empty error}">

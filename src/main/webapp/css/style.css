@@ -337,3 +337,40 @@ table td a:hover {
 .btn-secondary:hover {
     background-color: #6c7a7b;
 }
+
+
+/* --- Profile Details --- */
+.profile-details {
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem; 
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.detail-value {
+    font-weight: 500;
+    color: #2c3e50; /* Dark Charcoal/Blue */
+}
+
+/* --- Form Divider --- */
+.form-divider {
+    border: none;
+    height: 1px;
+    background-color: #eee;
+    margin: 0 0 2rem 0; 
+}
