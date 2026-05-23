@@ -340,6 +340,28 @@ if (session == null || session.getAttribute("user") == null) {
 
 ---
 
+
+
+## Screenshots
+
+| Login | Dashboard | Workout Log |
+|---|---|---|
+| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) | ![Workouts](screenshots/workouts.png) |
+
+| Real-Time AI Prediction | AI vs User Comparison | Edit Workout |
+|---|---|---|
+| ![AI Prediction](screenshots/ai-prediction.png) | ![AI Comparison](screenshots/ai-comparison.png) | ![Edit](screenshots/edit-workout.png) |
+
+| ML Training Console |
+|---|
+| <img src="screenshots/model-train1.png" width="500"/> |
+| <img src="screenshots/model-train2.png" width="500"/> |
+| <img src="screenshots/model-train3.png" width="500"/> |
+
+---
+
+
+
 ## Database Schema
 
 SQLite, auto-initialized on first user registration via `DatabaseManager`.
@@ -532,23 +554,6 @@ heroku deploy:jar target/fitlab.war --app your-app-name
 ### Environment Configuration
 
 No environment variables required all configuration is handled at runtime by `AppLifecycleListener` via `context.getRealPath()`. The database path and ML model path are resolved dynamically, making the WAR portable without any server-specific configuration files.
-
----
-
-## Screenshots
-
-| Login | Dashboard | Workout Log |
-|---|---|---|
-| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) | ![Workouts](screenshots/workouts.png) |
-
-| Real-Time AI Prediction | AI vs User Comparison | Edit Workout |
-|---|---|---|
-| ![AI Prediction](screenshots/ai-prediction.png) | ![AI Comparison](screenshots/ai-comparison.png) | ![Edit](screenshots/edit-workout.png) |
-
-| ML Training Console | | |
-|---|---|---|
-| ![ML](screenshots/model-train1.png) | ![ML](screenshots/model-train2.png) | ![ML](screenshots/model-train3.png) |
-| <img src="screenshots/model-train1.png" width="500"/> |
 
 ---
 
