@@ -545,9 +545,10 @@ No environment variables required all configuration is handled at runtime by `Ap
 |---|---|---|
 | ![AI Prediction](screenshots/ai-prediction.png) | ![AI Comparison](screenshots/ai-comparison.png) | ![Edit](screenshots/edit-workout.png) |
 
-| Profile | ML Training Console |
-|---|---|
-| ![Profile](screenshots/profile.png) | <img src="screenshots/model-training.png" width="500"/> |
+| ML Training Console | | |
+|---|---|---|
+| ![ML](screenshots/model-train1.png) | ![ML](screenshots/model-train2.png) | ![ML](screenshots/model-train3.png) |
+| <img src="screenshots/model-train1.png" width="500"/> |
 
 ---
 
