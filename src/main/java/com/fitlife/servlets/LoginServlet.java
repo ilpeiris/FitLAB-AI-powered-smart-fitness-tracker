@@ -1,3 +1,10 @@
+/**
+ * FitLab — ML-Powered Fitness Tracking Platform
+ * Author:  Isuru Lakmal Peiris
+ * GitHub:  github.com/ilpeiris
+ * License: GPL v3
+ */
+
 package com.fitlife.servlets;
 
 
